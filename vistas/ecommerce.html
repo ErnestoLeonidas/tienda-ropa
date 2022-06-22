@@ -164,10 +164,74 @@
             </a>
           </li>
 
-          <li class="nav-item">
-            <a class="btn btn-round btn-danger" href="vistas/ecommerce.html">
+          <li class="dropdown nav-item">
+            <a href="#" class="dropdown-toggle btn btn-round btn-danger" id="navbarDropdownMenuLink" data-toggle="dropdown">
               <i class="nc-icon nc-cart-simple"></i> Carrito
             </a>
+            <div class="dropdown-menu dropdown-menu-right dropdown-danger" aria-labelledby="navbarDropdownMenuLink">
+              
+              <!-- TABLA CARRITO -->
+              <div class="table-responsive">
+                <table class="table table-shopping">
+                  <thead>
+                    <tr>
+                        <th class="text-center"></th>
+                        <th>Product</th>
+                        <th class="th-description">Color</th>
+                        <th class="th-description">Size</th>
+                        <th class="text-right">Price</th>
+                        <th class="text-right">Qty</th>
+                        <th class="text-right">Amount</th>
+                        <th></th>
+                    </tr>
+                  </thead>
+                  <tbody id="carrito_compras">
+                    <tr>
+                        <td>
+                            <div class="img-container">
+                                <img src="https://images.thenorthface.com/is/image/TheNorthFace/NF0A2VFL_619_hero" alt="...">
+                            </div>
+                        </td>
+                        <td class="td-name">
+                            <a href="#jacket">Spring Jacket</a>
+                            <br><small>by Dolce&amp;Gabbana</small>
+                        </td>
+                        <td>
+                            Red
+                        </td>
+                        <td>
+                            M
+                        </td>
+                        <td class="td-number">
+                            <small>&#x20AC;</small>549
+                        </td>
+                        <td class="td-number">
+                            1
+                            <div class="btn-group">
+                                <button class="btn btn-info btn-sm"> <i class="nc-icon nc-simple-delete"></i> </button>
+                                <button class="btn btn-info btn-sm"> <i class="nc-icon nc-simple-add"></i> </button>
+                            </div>
+                        </td>
+                        <td class="td-number">
+                            <small>&#x20AC;</small>549
+                        </td>
+                        <td class="td-actions">
+                            <button type="button" rel="tooltip" data-placement="left" title="Remove item" class="btn btn-round btn-icon btn-neutral">
+                                <i class="nc-icon nc-simple-remove"></i>
+                            </button>
+                        </td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <td>boton</td>
+                    </tr>
+                  </tfoot>
+
+                </table>
+              </div>
+
+            </div>
           </li>
 
         </ul>
@@ -178,540 +242,39 @@
 
 
   <div class="wrapper">
+    <!-- Tienda Productos -->
     <div class="section latest-offers">
       <div class="container">
-        <h3 class="section-title">Latest Offers</h3>
+        <h3 class="section-title">Últimas Ofertas</h3>
         <div class="row" id="cards_productos">
 
         </div>
       </div>
     </div><!-- section -->
-    <div class="section section-gray">
-      <div class="container">
-        <h3 class="section-title">Find what you need</h3>
-        <div class="row">
-          <div class="col-md-3">
-            <div class="card card-refine">
-              <div class="panel-group" id="accordion" aria-multiselectable="true" aria-expanded="true">
-                <div class="card-header card-collapse" role="tab" id="priceRanger">
-                  <h5 class="mb-0 panel-title">
-                    <a class="" data-toggle="collapse" data-parent="#accordion" href="#priceRange" aria-expanded="true" aria-controls="collapseOne">
-                      Price Range
-                      <i class="nc-icon nc-minimal-down"></i>
-                    </a>
-                  </h5>
-                </div>
-                <div id="priceRange" class="collapse show" role="tabpanel" aria-labelledby="headingOne" aria-expanded="true">
-                  <div class="card-body">
-                    <div id="sliderDouble" class="slider slider-info noUi-target noUi-ltr noUi-horizontal noUi-background"></div>
-                  </div>
-                </div>
-                <div class="card-header card-collapse" role="tab" id="clothingGear">
-                  <h5 class="mb-0 panel-title">
-                    <a class="" data-toggle="collapse" data-parent="#accordion" href="#clothing" aria-expanded="true" aria-controls="collapseSecond">
-                      Clothing
-                      <i class="nc-icon nc-minimal-down"></i>
-                    </a>
-                  </h5>
-                </div>
-                <div id="clothing" class="collapse" role="tabpanel" aria-labelledby="headingOne">
-                  <div class="card-body">
-                    <div class="form-check">
-                      <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" value="" checked>
-                        Blazers
-                        <span class="form-check-sign"></span>
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" value="">
-                        Casual Shirts
-                        <span class="form-check-sign"></span>
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" value="">
-                        Formal Shirts
-                        <span class="form-check-sign"></span>
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" value="">
-                        Jeans
-                        <span class="form-check-sign"></span>
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" value="">
-                        Polos
-                        <span class="form-check-sign"></span>
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" value="">
-                        Pyjamas
-                        <span class="form-check-sign"></span>
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" value="">
-                        Shorts
-                        <span class="form-check-sign"></span>
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" value="">
-                        Trousers
-                        <span class="form-check-sign"></span>
-                      </label>
-                    </div>
-                  </div>
-                </div>
-                <div class="card-header card-collapse" role="tab" id="designer">
-                  <h5 class="mb-0 panel-title">
-                    <a class="" data-toggle="collapse" data-parent="#accordion" href="#refineDesigner" aria-expanded="true" aria-controls="collapseThree">
-                      Designer
-                      <i class="nc-icon nc-minimal-down"></i>
-                    </a>
-                  </h5>
-                </div>
-                <div id="refineDesigner" class="collapse" role="tabpanel" aria-labelledby="headingOne">
-                  <div class="card-body">
-                    <div class="form-check">
-                      <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" value="" checked>
-                        All
-                        <span class="form-check-sign"></span>
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" value="">
-                        Acne Studio
-                        <span class="form-check-sign"></span>
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" value="">
-                        Alex Mill
-                        <span class="form-check-sign"></span>
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" value="">
-                        Alexander McQueen
-                        <span class="form-check-sign"></span>
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" value="">
-                        Alfred Dunhill
-                        <span class="form-check-sign"></span>
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" value="">
-                        AMI
-                        <span class="form-check-sign"></span>
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" value="">
-                        Berena
-                        <span class="form-check-sign"></span>
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" value="">
-                        Berluti
-                        <span class="form-check-sign"></span>
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" value="">
-                        Burberry Prorsum
-                        <span class="form-check-sign"></span>
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" value="">
-                        Berluti
-                        <span class="form-check-sign"></span>
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" value="">
-                        Calvin Klein
-                        <span class="form-check-sign"></span>
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" value="">
-                        Club Monaco
-                        <span class="form-check-sign"></span>
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" value="">
-                        Dolce & Gabbana
-                        <span class="form-check-sign"></span>
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" value="">
-                        Gucci
-                        <span class="form-check-sign"></span>
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" value="">
-                        Kolor
-                        <span class="form-check-sign"></span>
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" value="">
-                        Lanvin
-                        <span class="form-check-sign"></span>
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" value="">
-                        Loro Piana
-                        <span class="form-check-sign"></span>
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" value="">
-                        Massimo Alba
-                        <span class="form-check-sign"></span>
-                      </label>
-                    </div>
-                  </div>
-                </div>
-                <div class="card-header card-collapse" role="tab" id="color">
-                  <h5 class="mb-0 panel-title">
-                    <a class="" data-toggle="collapse" data-parent="#accordion" href="#colorMaker" aria-expanded="true" aria-controls="collapseTree">
-                      Colour
-                      <i class="nc-icon nc-minimal-down"></i>
-                    </a>
-                  </h5>
-                </div>
-                <div id="colorMaker" class="collapse" role="tabpanel" aria-labelledby="headingOne">
-                  <div class="card-body">
-                    <div class="form-check">
-                      <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" value="" checked>
-                        All
-                        <span class="form-check-sign"></span>
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" value="">
-                        Blue
-                        <span class="form-check-sign"></span>
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" value="">
-                        Brown
-                        <span class="form-check-sign"></span>
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" value="">
-                        Gray
-                        <span class="form-check-sign"></span>
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" value="">
-                        Green
-                        <span class="form-check-sign"></span>
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" value="">
-                        Neutrals
-                        <span class="form-check-sign"></span>
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" value="">
-                        Purple
-                        <span class="form-check-sign"></span>
-                      </label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> <!-- end card -->
-          </div>
-          <div class="col-md-9">
-            <div class="products">
-              <div class="row">
-                <div class="col-md-4 col-sm-4">
-                  <div class="card card-product card-plain">
-                    <div class="card-image">
-                      <a href="#paper-kit">
-                        <img src="../assets/img/ecommerce/balmain_1.jpg" alt="Rounded Image" class="img-rounded img-responsive">
-                      </a>
-                      <div class="card-body">
-                        <div class="card-description">
-                          <h5 class="card-title">One Shoulder Dress</h5>
-                          <p class="card-description">Dresses & Skirts</p>
-                        </div>
-                        <div class="price">
-                          <h5>2.900 &euro;</h5>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 col-sm-4">
-                  <div class="card card-product card-plain">
-                    <div class="card-image">
-                      <a href="#paper-kit">
-                        <img src="../assets/img/ecommerce/balmain_2.jpg" alt="Rounded Image" class="img-rounded img-responsive">
-                      </a>
-                      <div class="card-body">
-                        <div class="card-description">
-                          <h5 class="card-title">Stretch-Knit Dress</h5>
-                          <p class="card-description">Dresses & Skirts</p>
-                        </div>
-                        <div class="price">
-                          <h5>1.700 &euro;</h5>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 col-sm-4">
-                  <div class="card card-product card-plain">
-                    <div class="card-image">
-                      <a href="#paper-kit">
-                        <img src="../assets/img/ecommerce/balmain_2.jpg" alt="Rounded Image" class="img-rounded img-responsive">
-                      </a>
-                      <div class="card-body">
-                        <div class="card-description">
-                          <h5 class="card-title">Chrystal Sheer Dress</h5>
-                          <p class="card-description">Dresses & Skirts</p>
-                        </div>
-                        <div class="price">
-                          <h5>1.500 &euro;</h5>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 col-sm-4">
-                  <div class="card card-product card-plain">
-                    <div class="card-image">
-                      <a href="#paper-kit">
-                        <img src="../assets/img/ecommerce/balmain_2.jpg" alt="Rounded Image" class="img-rounded img-responsive">
-                      </a>
-                      <div class="card-body">
-                        <div class="card-description">
-                          <h5 class="card-title">One Shoulder Dress</h5>
-                          <p class="card-description">Dresses & Skirts</p>
-                        </div>
-                        <div class="price">
-                          <h5>2.600 &euro;</h5>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 col-sm-4">
-                  <div class="card card-product card-plain">
-                    <div class="card-image">
-                      <a href="#paper-kit">
-                        <img src="../assets/img/ecommerce/balmain_8.jpg" alt="Rounded Image" class="img-rounded img-responsive">
-                      </a>
-                      <div class="card-body">
-                        <div class="card-description">
-                          <h5 class="card-title">Glass Beads Skirt</h5>
-                          <p class="card-description">Dresses & Skirts</p>
-                        </div>
-                        <div class="price">
-                          <h5>7.500 &euro;</h5>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 col-sm-4">
-                  <div class="card card-product card-plain">
-                    <div class="card-image">
-                      <a href="#paper-kit">
-                        <img src="../assets/img/ecommerce/balmain_8.jpg" alt="Rounded Image" class="img-rounded img-responsive">
-                      </a>
-                      <div class="card-body">
-                        <div class="card-description">
-                          <h5 class="card-title">Velvet Mini Dress</h5>
-                          <p class="card-description">Dresses & Skirts</p>
-                        </div>
-                        <div class="price">
-                          <h5>3.500 &euro;</h5>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3 offset-md-4">
-                  <button rel="tooltip" title="This is a morphing button" class="btn btn-round btn-outline-default" id="successBtn" data-toggle="morphing" data-rotation-color="gray">Load more...</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div><!-- section -->
-    <div class="section section-blog">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4">
-            <div class="card card-blog">
-              <div class="card-image">
-                <a href="#pablo">
-                  <img class="img img-raised" src="../assets/img/sections/miguel-perales.jpg">
-                </a>
-              </div>
-              <div class="card-body">
-                <h6 class="card-category text-info">Enterprise</h6>
-                <h5 class="card-title">
-                  <a href="#pablo">LinkedIn’s new desktop app arrives</a>
-                </h5>
-                <p class="card-description">
-                  LinkedIn is today launching its official desktop application for Windows 10, allowing the professional social networking service to... <br>
-                </p>
-                <hr>
-                <div class="card-footer">
-                  <div class="author">
-                    <a href="#pablo">
-                      <img src="../assets/img/faces/ayo-ogunseinde-2.jpg" alt="..." class="avatar img-raised">
-                      <span>Mike John</span>
-                    </a>
-                  </div>
-                  <div class="stats">
-                    <i class="fa fa-clock-o" aria-hidden="true"></i> 5 min read
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card card-blog">
-              <div class="card-image">
-                <a href="#pablo">
-                  <img class="img img-raised" src="../assets/img/sections/roger-keller.jpg">
-                </a>
-              </div>
-              <div class="card-body">
-                <h6 class="card-category text-success">
-                  Startups
-                </h6>
-                <h5 class="card-title">
-                  <a href="#pablo">MIT’s Cheetah 3 robot is built to save lives</a>
-                </h5>
-                <p class="card-description">
-                  The latest version of MIT’s Cheetah robot made its stage debut today at TC Sessions: Robotics in Cambridge, Mass. It’s a familiar project... <br>
-                </p>
-                <hr>
-                <div class="card-footer">
-                  <div class="author">
-                    <a href="#pablo">
-                      <img src="../assets/img/faces/kaci-baum-2.jpg" alt="..." class="avatar img-raised">
-                      <span>Nickie Kelly</span>
-                    </a>
-                  </div>
-                  <div class="stats">
-                    <i class="fa fa-clock-o" aria-hidden="true"></i> 5 min read
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card card-blog">
-              <div class="card-image">
-                <a href="#pablo">
-                  <img class="img img-raised" src="../assets/img/sections/joshua-earlesz.jpg">
-                </a>
-              </div>
-              <div class="card-body">
-                <h6 class="card-category text-danger">
-                  <i class="fa fa-free-code-camp" aria-hidden="true"></i> Enterprise
-                </h6>
-                <h5 class="card-title">
-                  <a href="#pablo">Lionel Richie says “Hello” to startup investors</a>
-                </h5>
-                <p class="card-description">
-                  Because developing a doctor-on-demand service that would allow personalized medical visits, booked through an app on a user’s phone is... <br>
-                </p>
-                <hr>
-                <div class="card-footer">
-                  <div class="author">
-                    <a href="#pablo">
-                      <img src="../assets/img/faces/erik-lucatero-2.jpg" alt="..." class="avatar img-raised">
-                      <span>Mike John</span>
-                    </a>
-                  </div>
-                  <div class="stats">
-                    <i class="fa fa-clock-o" aria-hidden="true"></i> 5 min read
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div><!-- section -->
+
+
+
     <div class="subscribe-line subscribe-line-black">
       <div class="container">
         <div class="row">
           <div class="col-md-9 col-sm-8">
             <form class="">
               <div class="form-group">
-                <input type="text" value="" class="form-control" placeholder="Enter your email...">
+                <input type="text" value="" class="form-control" placeholder="Ingresa tu email...">
               </div>
             </form>
           </div>
           <div class="col-md-3 col-sm-4">
-            <button type="button" class="btn btn-neutral btn-block btn-lg">Join Newsletter</button>
+            <button type="button" class="btn btn-neutral btn-block btn-lg">Suscribirse</button>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- Modal Carrito -->
+
+
+
     <footer class="footer footer-big">
       <div class="container">
         <div class="row">
@@ -753,7 +316,7 @@
               <div class="copyright">
                 © <script>
                   document.write(new Date().getFullYear())
-                </script>, made with <i class="fa fa-heart heart"></i> by Creative Tim
+                </script> by Ernesto Velásquez V.
               </div>
             </div>
           </div>
@@ -805,56 +368,44 @@
   <script src="../assets/js/paper-kit.js?v=2.3.1" type="text/javascript"></script>
   <!--  Google Maps Plugin    -->
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+
+  <script type="text/javascript" src="../assets/js/comunes.js"></script>
+
 </body>
 
 <script>
+
   $(document).ready(function() {
     $('#datetimepicker').datetimepicker({
       format: 'DD/MM/YYYY'
     });
 
-    addCard();
-    addCard();
-    addCard();
+    //addCard();
+    getProductos()
 
   });
 
-  //funcion para agregar un nuevo card de producto
-  function addCard(id, name, price, image, description) {
-    var card =  `<div class="col-md-4">
-                  <div class="card card-product card-plain">
-                    <div class="card-image">
-                      <a href="#paper-kit">
-                        <img src="../assets/img/ecommerce/balmain_5.jpg" alt="Rounded Image" class="img-rounded img-responsive">
-                      </a>
-                      <div class="card-body">
-                        <div class="card-description">
-                          <h5 class="card-title font-weight-bold">Green Velvet Dress</h5>
-                          <p class="card-description">This is a limited edition dress for the fall collection. Comes in 3 colours.</p>
-                        </div>
-                        <div class="price">
-                          <s>3.520 €</s> <span class="text-danger">2.900 €</span>
-                        </div>
+  // ajax GET productos
+  getProductos = () => {
+    $.ajax({
+      url: `${API_URL}/productos`,
+      type: 'GET',
+      dataType: 'json',
+      success: function(data) {
+        $.each(data, function(index, value) {
 
-                        <div class="d-flex justify-content-center align-items-center">
-                          <h3 class="m-0 mr-3 font-weight-normal"> 2 </h3>
-                          <div class="btn-group">
-                            <button class="btn btn-sm btn-border btn-round"> - </button>
-                            <button class="btn btn-sm btn-border btn-round"> + </button>
-                          </div>
-                        </div>
+          //html += '<option value="' + value.id + '">' + value.nombre + '</option>';
 
-                      </div>
-                    </div>
-                  </div>
-                </div>`;
-    // agregar a cards_products
-    $("#cards_productos").append(card);
+          addCardProducto(value.id, value.codigo, value.nombre, value.valor_venta, value.stock, value.descripcion, value.imagen);
+
+        });
+
+      }
+    });
   }
 
-  //funcion para agregar un nuevo card de producto 
-  //url_imagen: ../assets/img/ecommerce/balmain_5.jpg
-  anadirProducto = (id, codigo, nombre, valor_venta, descuento, stock, descripcion, url_imagen) => {
+  //funcion para agregar un nuevo card de producto a la vista
+  addCardProducto = (id, codigo, nombre, valor_venta, stock, descripcion, url_imagen, estado, descuento = 1) => {
     var card =  `<div class="col-md-4">
                   <div class="card card-product card-plain">
                     <div class="card-image">
@@ -869,14 +420,15 @@
                         </div>
 
                         <div class="price">
-                          <s>$ ${valor_venta - descuento}</s> <span class="text-danger">$ ${valor_venta}</span>
+                          <s>$ ${valor_venta}</s> <span class="text-danger valor_venta_final">$ ${valor_venta - valor_venta * (descuento/100)}</span>
                         </div>
 
                         <div class="d-flex justify-content-center align-items-center">
-                          <h3 class="m-0 mr-3 font-weight-normal carrito_cantidad"> 2 </h3>
+                          <h3 class="m-0 mr-3 font-weight-normal carrito_cantidad"> 0 </h3>
+                          <input name="id_producto" type="hidden" value="${id}">
                           <div class="btn-group">
-                            <button class="btn btn-sm btn-border btn-round carrito_anadir"> - </button>
-                            <button class="btn btn-sm btn-border btn-round carrito_quitar"> + </button>
+                            <button class="btn btn-sm btn-border btn-round carrito_quitar"> - </button>
+                            <button class="btn btn-sm btn-border btn-round carrito_anadir"> + </button>
                           </div>
                         </div>
 
@@ -887,6 +439,86 @@
     // agregar a cards_products
     $("#cards_productos").append(card);
   }
+
+  // click para el boton de agregar al carrito carrito_anadir
+  $(document).on('click', '.carrito_anadir', function() {
+    var cantidad = $(this).parent().parent().find('.carrito_cantidad').text();
+    cantidad = parseInt(cantidad) + 1;
+    $(this).parent().parent().find('.carrito_cantidad').text(cantidad);
+    
+    var id_producto = $(this).parent().parent().find('input[name="id_producto"]').val();
+
+    //ajax consultar producto
+    $.ajax({
+      url: `${API_URL}/productos/${id_producto}`,
+      type: 'GET',
+      dataType: 'json',
+      success: function(data) {
+        console.log(data);
+        //var valor_venta_final = data.valor_venta - data.valor_venta * (data.descuento/100);
+        //$(this).parent().parent().find('.valor_venta_final').text(valor_venta_final);
+      }
+    });
+
+
+    console.log(valor_venta_final);
+
+    var fila =  `<tr>
+                  <td>
+                      <div class="img-container">
+                        <img src="${url_imagen}" alt="..." class="img-fluid">
+                      </div>
+                  </td>
+                  <td class="td-name">
+                      <a href="#">${nombre}</a>
+                  </td>
+                  <td>
+                      Red
+                  </td>
+                  <td>
+                      M
+                  </td>
+                  <td class="td-number">
+                      <small>$</small>${valor_venta}
+                  </td>
+                  <td class="td-number">
+                      1
+                      <div class="btn-group">
+                          <button class="btn btn-info btn-sm"> <i class="nc-icon nc-simple-delete"></i> </button>
+                          <button class="btn btn-info btn-sm"> <i class="nc-icon nc-simple-add"></i> </button>
+                      </div>
+                  </td>
+                  <td class="td-number">
+                      <small>$</small>549
+                  </td>
+                  <td class="td-actions">
+                      <button type="button" rel="tooltip" data-placement="left" title="Remove item" class="btn btn-round btn-icon btn-neutral">
+                          <i class="nc-icon nc-simple-remove"></i>
+                      </button>
+                  </td>
+                </tr>`;
+
+            
+    $("#carrito_compras").append(fila);
+
+
+
+
+  });
+
+  // click para el boton de quitar al carrito carrito_quitar
+  $(document).on('click', '.carrito_quitar', function() {
+    var cantidad = $(this).parent().parent().find('.carrito_cantidad').text();
+    //no disminuir si es 0
+    if (cantidad > 0) {
+      cantidad = parseInt(cantidad) - 1;
+      $(this).parent().parent().find('.carrito_cantidad').text(cantidad);
+    }
+  });
+
+  
+
+
 
 
 
