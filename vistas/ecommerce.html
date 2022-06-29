@@ -165,73 +165,11 @@
           </li>
 
           <li class="dropdown nav-item">
-            <a href="#" class="dropdown-toggle btn btn-round btn-danger" id="navbarDropdownMenuLink" data-toggle="dropdown">
+            <button href="#" class="btn btn-round btn-danger" id="navbarDropdownMenuLink" data-toggle="dropdown">
               <i class="nc-icon nc-cart-simple"></i> Carrito
-            </a>
-            <div class="dropdown-menu dropdown-menu-right dropdown-danger" aria-labelledby="navbarDropdownMenuLink">
-              
-              <!-- TABLA CARRITO -->
-              <div class="table-responsive">
-                <table class="table table-shopping">
-                  <thead>
-                    <tr>
-                        <th class="text-center"></th>
-                        <th>Product</th>
-                        <th class="th-description">Color</th>
-                        <th class="th-description">Size</th>
-                        <th class="text-right">Price</th>
-                        <th class="text-right">Qty</th>
-                        <th class="text-right">Amount</th>
-                        <th></th>
-                    </tr>
-                  </thead>
-                  <tbody id="carrito_compras">
-                    <tr>
-                        <td>
-                            <div class="img-container">
-                                <img src="https://images.thenorthface.com/is/image/TheNorthFace/NF0A2VFL_619_hero" alt="...">
-                            </div>
-                        </td>
-                        <td class="td-name">
-                            <a href="#jacket">Spring Jacket</a>
-                            <br><small>by Dolce&amp;Gabbana</small>
-                        </td>
-                        <td>
-                            Red
-                        </td>
-                        <td>
-                            M
-                        </td>
-                        <td class="td-number">
-                            <small>&#x20AC;</small>549
-                        </td>
-                        <td class="td-number">
-                            1
-                            <div class="btn-group">
-                                <button class="btn btn-info btn-sm"> <i class="nc-icon nc-simple-delete"></i> </button>
-                                <button class="btn btn-info btn-sm"> <i class="nc-icon nc-simple-add"></i> </button>
-                            </div>
-                        </td>
-                        <td class="td-number">
-                            <small>&#x20AC;</small>549
-                        </td>
-                        <td class="td-actions">
-                            <button type="button" rel="tooltip" data-placement="left" title="Remove item" class="btn btn-round btn-icon btn-neutral">
-                                <i class="nc-icon nc-simple-remove"></i>
-                            </button>
-                        </td>
-                    </tr>
-                  </tbody>
-                  <tfoot>
-                    <tr>
-                      <td>boton</td>
-                    </tr>
-                  </tfoot>
+              <span id="numero_carrito" class="ml-2"></span>
+            </button>
 
-                </table>
-              </div>
-
-            </div>
           </li>
 
         </ul>
@@ -440,14 +378,141 @@
     $("#cards_productos").append(card);
   }
 
+  //funcion cambiar numeracion de productos en el carrito de compras
+  cambiarNumeracion_agregar = () => {
+    var numero_carrito = $("#numero_carrito").text();
+    if (numero_carrito == null || numero_carrito == "" || numero_carrito == undefined) {
+      $("#numero_carrito").text(1);
+    } else {
+      var numero_carrito = parseInt(numero_carrito) + 1;
+      $("#numero_carrito").text(numero_carrito);
+    }
+  }
+
+
+
+  // funcion ajax agregar productos a la tabla ventas
+  agregarProductoVentas = (vendedor_id, cliente_id, descuento, fecha, total, iva, estado) => {
+    $.ajax({
+      url: `${API_URL}/ventas/agregar_ventas`,
+      type: 'POST',
+      dataType: 'json',
+      data: {
+        vendedor_id: vendedor_id,
+        cliente_id: cliente_id,
+        descuento: descuento,
+        fecha: fecha,
+        total: total,
+        iva: iva,
+        estado: estado
+      },
+      success: function(data) {
+        console.log(data);
+      }
+    });
+  }
+
+  // funcion ajax agregar productos a la tabla detalle_ventas
+  agregarProductoDetalleVentas = (venta_id, producto_id, cantidad, precio, descuento, estado) => {
+    $.ajax({
+      url: `${API_URL}/ventas/agregar_detalle_ventas`,
+      type: 'POST',
+      dataType: 'json',
+      data: {
+        venta_id: venta_id,
+        producto_id: producto_id,
+        cantidad: cantidad,
+        precio: precio,
+        descuento: descuento,
+        estado: estado
+      },
+      success: function(data) {
+        console.log(data);
+      },
+      error: function(data) {
+        console.log('error en agregarProductoDetalleVentas');
+      }
+    });
+  }
+
+  editarProductoDetalleVentas = (venta_id, producto_id, cantidad, precio, descuento, estado) => {
+    $.ajax({
+      url: `${API_URL}/ventas/editar_detalle_ventas`,
+      type: 'PUT',
+      contentType: 'application/json',
+      dataType: 'json',
+      data: {
+        venta_id: venta_id,
+        producto_id: producto_id,
+        cantidad: cantidad,
+        precio: precio,
+        descuento: descuento,
+        estado: estado
+      },
+      success: function(data) {
+        console.log(data);
+      },
+      error: function(data) {
+        console.log('error en editarProductoDetalleVentas');
+      }
+    });
+  }
+
+  //funcion ajax crear venta
+  crearVenta = (id_producto) => {
+    //obtener fecha actual sistema
+    let date = new Date();
+    let fecha = date.toISOString().split('T')[0];
+    
+    var resultado = $.ajax({
+      url: `${API_URL}/ventas`,
+      type: 'POST',
+      contentType: 'application/json',
+      async: false,
+      data: JSON.stringify({
+        id: fecha,
+        vendedor_id: 1,
+        cliente_id: 0,
+        descuento: 0,
+        fecha: fecha,
+        total: 0,
+        iva: 0,
+        estado: 1
+      }),
+      success: function(data) {
+        response = data;
+      },
+      error: function(data) {
+        response = data;
+      }
+    });
+    
+    //si existe return false
+    if(resultado.status == 201){
+      return false
+    }
+    else{
+      return true;
+    }
+
+  }
+
+
   // click para el boton de agregar al carrito carrito_anadir
   $(document).on('click', '.carrito_anadir', function() {
     var cantidad = $(this).parent().parent().find('.carrito_cantidad').text();
     cantidad = parseInt(cantidad) + 1;
+    //cambia el valor en la pantalla de los elementos agregados
     $(this).parent().parent().find('.carrito_cantidad').text(cantidad);
     
     var id_producto = $(this).parent().parent().find('input[name="id_producto"]').val();
 
+    //crea la venta
+    existe_venta = crearVenta(id_producto);
+
+    console.log(existe_venta);
+    
+    /*
     //ajax consultar producto
     $.ajax({
       url: `${API_URL}/productos/${id_producto}`,
@@ -455,53 +520,19 @@
       dataType: 'json',
       success: function(data) {
         console.log(data);
-        //var valor_venta_final = data.valor_venta - data.valor_venta * (data.descuento/100);
-        //$(this).parent().parent().find('.valor_venta_final').text(valor_venta_final);
+
+        if (cantidad == 0) {
+          //eliminar producto de la tabla detalle_ventas
+          cambiarNumeracion_agregar();
+          agregarProductoDetalleVentas(0, data.id, cantidad, data.valor_venta, data.descuento, 1);
+        } else {
+          //actualizar producto de la tabla detalle_ventas
+          actualizarProductoDetalleVentas(venta_id, id_producto, cantidad, data.valor_venta, data.descuento);
+        }
       }
     });
-
-
-    console.log(valor_venta_final);
-
-    var fila =  `<tr>
-                  <td>
-                      <div class="img-container">
-                        <img src="${url_imagen}" alt="..." class="img-fluid">
-                      </div>
-                  </td>
-                  <td class="td-name">
-                      <a href="#">${nombre}</a>
-                  </td>
-                  <td>
-                      Red
-                  </td>
-                  <td>
-                      M
-                  </td>
-                  <td class="td-number">
-                      <small>$</small>${valor_venta}
-                  </td>
-                  <td class="td-number">
-                      1
-                      <div class="btn-group">
-                          <button class="btn btn-info btn-sm"> <i class="nc-icon nc-simple-delete"></i> </button>
-                          <button class="btn btn-info btn-sm"> <i class="nc-icon nc-simple-add"></i> </button>
-                      </div>
-                  </td>
-                  <td class="td-number">
-                      <small>$</small>549
-                  </td>
-                  <td class="td-actions">
-                      <button type="button" rel="tooltip" data-placement="left" title="Remove item" class="btn btn-round btn-icon btn-neutral">
-                          <i class="nc-icon nc-simple-remove"></i>
-                      </button>
-                  </td>
-                </tr>`;
-
-            
-    $("#carrito_compras").append(fila);
-
-
+    */
+    
 
 
   });
