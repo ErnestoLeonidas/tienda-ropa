@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--- Mis estilos -->
+
+
+    <title>Página Principal</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Mi Tienda de Libros</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="libros.html">Libros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contacto.html">Contacto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="carrito.html">Carrito de compras</a>
+          </li>
+  
+          <li class="nav-item">
+              <a class="nav-link" href="login.html">Login</a>
+          </li>
+  
+          <!-- link para los usuarios -->
+          <li class="nav-item">
+            <a class="nav-link" href="usuarios.html">Usuario</a>
+          </li>
+        </ul>
+      </div>
+      
+    </nav>
+
+    <!-- Navbar -->
+
+    <div class="container">
+
+      <div class="row justify-content-md-center mt-3">
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Registro de Usuarios</h5>
+
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputPrimerNombre">Primer Nombre</label>
+                    <input type="text" class="form-control" id="inputPrimerNombre">
+                    <input type="text" class="form-control" id="inputIdUsuario" hidden>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="inputSegundoNombre">Segundo Nombre</label>
+                    <input type="text" class="form-control" id="inputSegundoNombre">
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputApellidoPaterno">Apellido Paterno</label>
+                    <input type="text" class="form-control" id="inputApellidoPaterno">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="inputApellidoMaterno">Apellido Materno</label>
+                    <input type="text" class="form-control" id="inputApellidoMaterno">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="inputDireccion">Dirección</label>
+                  <input type="text" class="form-control" id="inputDireccion" placeholder="Mi casa 1234">
+                </div>
+
+                
+                <div class="form-row">
+                  <!-- Comunas -->
+                  <div class="form-group col-md-6">
+                    <label for="inputComuna">Comunas</label>
+
+                    <select id="inputComuna" class="form-control" title="-- Seleccionar --">
+                      <option value="" selected>-- Seleccionar --</option>
+                    </select>
+
+                  </div>
+                </div>
+
+                
+
+              <a id="btnAgregarUsuario" class="btn btn-primary">Registrar</a>
+              <a id="btnEditarUsuarioTabla" class="btn btn-success">Editar</a>
+            </div>
+          </div>
+        </div>
+
+        <!--  
+        <div class="col-sm-6">
+          <div class="card" style="height: 100%;">
+            <div class="card-body">
+
+              <h5 class="card-title">Listado de Usuarios</h5>
+
+              <a href="#" class="btn btn-primary">Go</a>
+            </div>
+          </div>
+        </div>
+        -->
+
+      </div>
+
+
+      <div class="row mt-4">
+        <div class="col-sm-12">
+          <div class="card" style="height: 100%;">
+            <div class="card-body">
+
+              <h5 class="card-title">Listado de Usuarios</h5>
+
+              <!-- Tabla de usuarios -->
+              <div class="table-responsive">
+                <table class="table" id="tablaUsuarios">
+                  <thead class="thead-dark">
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Primer Nombre</th>
+                      <th scope="col">Segundo Nombre</th>
+                      <th scope="col">Apellido Paterno</th>
+                      <th scope="col">Apellido Materno</th>
+                      <th scope="col">Dirección</th>
+                      <th scope="col">Comuna</th>
+                      <th scope="col">Acciones</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+
+                  </tbody>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>   
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+    
+    <!-- sweetalert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!--- Mis scripts -->
+    <!-- comunes  -->
+    <script src="assets/js/comunes.js"></script>
+    <script> 
+
+
+        //buscar las comunas en la api
+        $(document).ready(function() {
+          //addCard();
+          getComunas();
+          getUsuarios();
+
+        });
+
+        // ajax GET getComunas
+        getComunas = () => {
+          $.ajax({
+            url: `${API_URL}/comunas`,
+            type: 'GET',
+            dataType: 'json',
+            success: function(data) {
+              $.each(data, function(index, value) {
+                //llenar el select comunas
+                $("#inputComuna").append(`<option id="${value.id_comuna}" value="${value.id_comuna}">${value.nombre}</option>`);
+              });
+
+            }
+          });
+        }
+
+        getUsuarios = () => {
+          $.ajax({
+            url: `${API_URL}/usuarios`,
+            type: 'GET',
+            dataType: 'json',
+            success: function(data) {
+              $.each(data, function(index, value) {
+                //llenar la tabla
+                $("#tablaUsuarios").append(`<tr>
+                            <th scope="row">${value.id_usuario}</th>
+                            <td>${value.primer_nombre}</td>
+                            <td>${value.segundo_nombre}</td>
+                            <td>${value.apellido_paterno}</td>
+                            <td>${value.apellido_materno}</td>
+                            <td>${value.direccion}</td>
+                            <td>${value.nombre_comuna}
+                              <input type="hidden" name="id_comuna" value="${value.id_comuna}">
+                            </td>
+                            <td>
+                                <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                                <button type="button" class="btn btn-success btnEditarusuario"><i class="fa-solid fa-pencil"></i></button>
+                                <button type="button" class="btn btn-danger btnEliminarUsuario"><i class="fa-solid fa-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>`);
+
+              });
+            }
+          });
+        }
+
+
+        //funcionalidad para agregar los usuarios a la tabla
+        $("#btnAgregarUsuario").click(function(e){
+            e.preventDefault();
+            //console.log('btnAgregarUsuario');
+
+            var primer_nombre = $("#inputPrimerNombre").val();
+            var segundo_nombre = $("#inputSegundoNombre").val();
+            var apellido_paterno = $("#inputApellidoPaterno").val();
+            var apellido_materno = $("#inputApellidoMaterno").val();
+            var direccion = $("#inputDireccion").val();
+            var id_comuna = $("#inputComuna").val();
+
+            //nombre de la comuna
+            var nombre_comuna = $("#inputComuna option:selected").text();
+
+            let fila = `<tr>
+                            <th scope="row">${ultimoId()}</th>
+                            <td>${primer_nombre}</td>
+                            <td>${segundo_nombre}</td>
+                            <td>${apellido_paterno}</td>
+                            <td>${apellido_materno}</td>
+                            <td>${direccion}</td>
+                            <td>${nombre_comuna}
+                              <input type="hidden" name="id_comuna" value="${id_comuna}">
+                            </td>
+                            <td>
+                                <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                                <button type="button" class="btn btn-success btnEditarusuario"><i class="fa-solid fa-pencil"></i></button>
+                                <button type="button" class="btn btn-danger btnEliminarUsuario"><i class="fa-solid fa-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>`;
+            
+           $("#tablaUsuarios").append(fila);
+        })
+    
+        function ultimoId(){
+            let ultimoId = $("#tablaUsuarios tr:last th").text();
+            return parseInt(ultimoId)+1;
+        }
+
+       // borrar linea
+        $(".btnEliminarUsuario").click(function(e){
+            e.preventDefault();
+            //console.log('btnEliminarUsuario');
+            $(this).closest('tr').remove();
+        })
+
+
+        //editar usuario de la tabla
+        $(document).on('click', '.btnEditarusuario', function(e) {
+            e.preventDefault();
+
+            var idUsuario = $(this).closest('tr').find('th').text();
+            var usuario = $(this).closest('tr').find('td');
+
+            var primer_nombre = usuario.eq(0).text();
+            var segundo_nombre = usuario.eq(1).text();
+            var apellido_paterno = usuario.eq(2).text();
+            var apellido_materno = usuario.eq(3).text();
+            var direccion = usuario.eq(4).text();
+            var id_comuna = usuario.eq(5).find('input').val();
+
+            $("#inputPrimerNombre").val(primer_nombre);
+            $("#inputSegundoNombre").val(segundo_nombre);
+            $("#inputApellidoPaterno").val(apellido_paterno);
+            $("#inputApellidoMaterno").val(apellido_materno);
+            $("#inputDireccion").val(direccion);
+            $("#inputIdUsuario").val(idUsuario);
+
+            $("#inputComuna").val(id_comuna);
+
+        });
+
+        //boton editar del formulario
+        $("#btnEditarUsuarioTabla").click(function(){
+            var primer_nombre = $("#inputPrimerNombre").val();
+            var segundo_nombre = $("#inputSegundoNombre").val();
+            var apellido_paterno = $("#inputApellidoPaterno").val();
+            var apellido_materno = $("#inputApellidoMaterno").val();
+            var direccion = $("#inputDireccion").val();
+
+            var nombre_comuna = $("#inputComuna option:selected").text();
+            var id_comuna = $("#inputComuna").val();
+
+            var idUsuario = $("#inputIdUsuario").val();
+
+            let fila = `<tr>
+                            <th scope="row">${idUsuario}</th>
+                            <td>${primer_nombre}</td>
+                            <td>${segundo_nombre}</td>
+                            <td>${apellido_paterno}</td>
+                            <td>${apellido_materno}</td>
+                            <td>${direccion}</td>
+                            <td>${nombre_comuna}
+                              <input type="hidden" name="id_comuna" value="${id_comuna}">
+                            </td>
+              
+                            <td>
+                                <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                                <button type="button" class="btn btn-success btnEditarusuario"><i class="fa-solid fa-pencil"></i></button>
+                                <button type="button" class="btn btn-danger btnEliminarUsuario"><i class="fa-solid fa-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>`;
+
+        //eliminar la fila que seleccione
+        $(`#tablaUsuarios tr th:contains(${idUsuario})`).closest('tr').remove();
+
+        $("#tablaUsuarios").append(fila);
+
+        });
+
+
+
+    </script>
+
+
+
+
+  </body>
+</html>
